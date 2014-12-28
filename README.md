@@ -1,3 +1,1 @@
-Mapbox light
-===========================
-Light basemap style for [Mapbox Studio](https://github.com/mapbox/mapbox-studio).
+Mapbox project for Portland, OR restraunt inspection scores.
