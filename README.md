@@ -1,1 +1,1 @@
-Mapbox project for Portland, OR restraunt inspection scores.
+Mapbox project for Portland, OR restaurant inspection scores.
