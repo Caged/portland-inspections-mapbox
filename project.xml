@@ -3,15 +3,18 @@
 <Map srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over" background-color="#eeeeee">
 
 <Parameters>
-  <Parameter name="attribution"><![CDATA[<a href="#">Justin Palmer</a>, <a href='https://www.mapbox.com/about/maps/' target='_blank'>&copy; Mapbox &copy; OpenStreetMap</a> <a class='mapbox-improve-map' href='https://www.mapbox.com/map-feedback/' target='_blank'>Improve this map</a>]]></Parameter>
+  <Parameter name="attribution"><![CDATA[<a href="https://labratrevenge.com">&copy; Justin Palmer</a>, &copy; City of Portland, OR, <a href='https://www.mapbox.com/about/maps/' target='_blank'>&copy; Mapbox &copy; OpenStreetMap</a> <a class='mapbox-improve-map' href='https://www.mapbox.com/map-feedback/' target='_blank'>Improve this map</a>]]></Parameter>
   <Parameter name="bounds">-180,-85.0511,180,85.0511</Parameter>
-  <Parameter name="center">-122.6836,45.5253,14</Parameter>
-  <Parameter name="description"><![CDATA[2014 restaurant inspections in Portland, OR.]]></Parameter>
-  <Parameter name="format">png8:m=h</Parameter>
-  <Parameter name="maxzoom">22</Parameter>
+  <Parameter name="center">-122.6756,45.5243,15</Parameter>
+  <Parameter name="description"><![CDATA[2014 Restaurant inspection data for Portland, OR.]]></Parameter>
+  <Parameter name="format">png8:m=h:c=64</Parameter>
+  <Parameter name="interactivity_layer">inspections</Parameter>
+  <Parameter name="interactivity_fields">grade,name,score,date</Parameter>
+  <Parameter name="maxzoom">20</Parameter>
   <Parameter name="minzoom">14</Parameter>
-  <Parameter name="name"><![CDATA[Portland Restaurant Inspections]]></Parameter>
+  <Parameter name="name"><![CDATA[Restaurant Inspections]]></Parameter>
   <Parameter name="source"><![CDATA[mapbox:///mapbox.mapbox-terrain-v1,mapbox.mapbox-streets-v5,caged.845d6d73]]></Parameter>
+  <Parameter name="template"><![CDATA[<div class='grade {{grade}}'><h3>{{name}}</h3> scored <span class='score'>{{score}}</span> on <span class='date'>{{date}}</span></div>]]></Parameter>
 </Parameters>
 
 
@@ -1262,19 +1265,111 @@
 
 <Style name="inspections" filter-mode="first">
   <Rule>
+    <MaxScaleDenominator>2500</MaxScaleDenominator>
     <Filter>([score] &gt;= 90)</Filter>
-    <MarkersSymbolizer fill="#6fca4b" stroke-width="0" width="6" opacity="1" allow-overlap="true" />
+    <MarkersSymbolizer width="12" fill="#6fca4b" stroke-width="1" opacity="1" allow-overlap="true" stroke="#ffffff" />
   </Rule>
   <Rule>
+    <MaxScaleDenominator>5000</MaxScaleDenominator>
+    <MinScaleDenominator>2500</MinScaleDenominator>
+    <Filter>([score] &gt;= 90)</Filter>
+    <MarkersSymbolizer width="10" fill="#6fca4b" stroke-width="1" opacity="1" allow-overlap="true" stroke="#ffffff" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>12500</MaxScaleDenominator>
+    <MinScaleDenominator>5000</MinScaleDenominator>
+    <Filter>([score] &gt;= 90)</Filter>
+    <MarkersSymbolizer width="8" fill="#6fca4b" stroke-width="1" opacity="1" allow-overlap="true" stroke="#ffffff" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <MinScaleDenominator>12500</MinScaleDenominator>
+    <Filter>([score] &gt;= 90)</Filter>
+    <MarkersSymbolizer width="7" fill="#6fca4b" stroke-width="1" opacity="1" allow-overlap="true" stroke="#ffffff" />
+  </Rule>
+  <Rule>
+    <MinScaleDenominator>25000</MinScaleDenominator>
+    <Filter>([score] &gt;= 90)</Filter>
+    <MarkersSymbolizer fill="#6fca4b" stroke-width="1" width="6" opacity="1" allow-overlap="true" stroke="#ffffff" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>2500</MaxScaleDenominator>
     <Filter>([score] &gt;= 80)</Filter>
-    <MarkersSymbolizer fill="#ffa500" stroke-width="0" width="6" opacity="1" allow-overlap="true" />
+    <MarkersSymbolizer width="12" fill="#ffa711" stroke-width="1" opacity="1" allow-overlap="true" stroke="#ffffff" />
   </Rule>
   <Rule>
-    <Filter>([score] &gt;= 70)</Filter>
-    <MarkersSymbolizer fill="#ff0000" stroke-width="0" width="6" opacity="1" allow-overlap="true" />
+    <MaxScaleDenominator>5000</MaxScaleDenominator>
+    <MinScaleDenominator>2500</MinScaleDenominator>
+    <Filter>([score] &gt;= 80)</Filter>
+    <MarkersSymbolizer width="10" fill="#ffa711" stroke-width="1" opacity="1" allow-overlap="true" stroke="#ffffff" />
   </Rule>
   <Rule>
-    <MarkersSymbolizer fill="#ff0000" stroke-width="0" width="6" opacity="1" allow-overlap="true" />
+    <MaxScaleDenominator>12500</MaxScaleDenominator>
+    <MinScaleDenominator>5000</MinScaleDenominator>
+    <Filter>([score] &gt;= 80)</Filter>
+    <MarkersSymbolizer width="8" fill="#ffa711" stroke-width="1" opacity="1" allow-overlap="true" stroke="#ffffff" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <MinScaleDenominator>12500</MinScaleDenominator>
+    <Filter>([score] &gt;= 80)</Filter>
+    <MarkersSymbolizer width="7" fill="#ffa711" stroke-width="1" opacity="1" allow-overlap="true" stroke="#ffffff" />
+  </Rule>
+  <Rule>
+    <MinScaleDenominator>25000</MinScaleDenominator>
+    <Filter>([score] &gt;= 80)</Filter>
+    <MarkersSymbolizer fill="#ffa711" stroke-width="1" width="6" opacity="1" allow-overlap="true" stroke="#ffffff" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>2500</MaxScaleDenominator>
+    <Filter>([score] &lt; 80)</Filter>
+    <MarkersSymbolizer width="12" fill="#ee0000" stroke-width="1" opacity="1" allow-overlap="true" stroke="#ffffff" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>5000</MaxScaleDenominator>
+    <MinScaleDenominator>2500</MinScaleDenominator>
+    <Filter>([score] &lt; 80)</Filter>
+    <MarkersSymbolizer width="10" fill="#ee0000" stroke-width="1" opacity="1" allow-overlap="true" stroke="#ffffff" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>12500</MaxScaleDenominator>
+    <MinScaleDenominator>5000</MinScaleDenominator>
+    <Filter>([score] &lt; 80)</Filter>
+    <MarkersSymbolizer width="8" fill="#ee0000" stroke-width="1" opacity="1" allow-overlap="true" stroke="#ffffff" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <MinScaleDenominator>12500</MinScaleDenominator>
+    <Filter>([score] &lt; 80)</Filter>
+    <MarkersSymbolizer width="7" fill="#ee0000" stroke-width="1" opacity="1" allow-overlap="true" stroke="#ffffff" />
+  </Rule>
+  <Rule>
+    <MinScaleDenominator>25000</MinScaleDenominator>
+    <Filter>([score] &lt; 80)</Filter>
+    <MarkersSymbolizer fill="#ee0000" stroke-width="1" width="6" opacity="1" allow-overlap="true" stroke="#ffffff" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>2500</MaxScaleDenominator>
+    <MarkersSymbolizer width="12" stroke-width="1" opacity="1" allow-overlap="true" stroke="#ffffff" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>5000</MaxScaleDenominator>
+    <MinScaleDenominator>2500</MinScaleDenominator>
+    <MarkersSymbolizer width="10" stroke-width="1" opacity="1" allow-overlap="true" stroke="#ffffff" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>12500</MaxScaleDenominator>
+    <MinScaleDenominator>5000</MinScaleDenominator>
+    <MarkersSymbolizer width="8" stroke-width="1" opacity="1" allow-overlap="true" stroke="#ffffff" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <MinScaleDenominator>12500</MinScaleDenominator>
+    <MarkersSymbolizer width="7" stroke-width="1" opacity="1" allow-overlap="true" stroke="#ffffff" />
+  </Rule>
+  <Rule>
+    <MinScaleDenominator>25000</MinScaleDenominator>
+    <MarkersSymbolizer stroke-width="1" width="6" opacity="1" allow-overlap="true" stroke="#ffffff" />
   </Rule>
 </Style>
 <Layer name="inspections"

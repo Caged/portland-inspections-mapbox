@@ -1,1 +1,8 @@
-[]
+- place_name: Portland, 97205, Oregon, United States
+  zoom: 16
+  center: 
+    - 45.519819502877084
+    - -122.67866134643553
+  tags: 
+    - userbookmark
+  index: 0

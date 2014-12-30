@@ -1,22 +1,23 @@
-_prefs:
+_prefs: 
+  mapid: caged.99e6fcac
   saveCenter: false
-_properties:
-  bridge:
+_properties: 
+  bridge: 
     "group-by": layer
-attribution: "<a href=\"#\">Justin Palmer</a>, <a href='https://www.mapbox.com/about/maps/' target='_blank'>&copy; Mapbox &copy; OpenStreetMap</a> <a class='mapbox-improve-map' href='https://www.mapbox.com/map-feedback/' target='_blank'>Improve this map</a>"
-bounds:
+attribution: "<a href=\"https://labratrevenge.com\">&copy; Justin Palmer</a>, &copy; City of Portland, OR, <a href='https://www.mapbox.com/about/maps/' target='_blank'>&copy; Mapbox &copy; OpenStreetMap</a> <a class='mapbox-improve-map' href='https://www.mapbox.com/map-feedback/' target='_blank'>Improve this map</a>"
+bounds: 
   - -180
   - -85.0511
   - 180
   - 85.0511
-center:
-  - -122.6836
-  - 45.5253
-  - 14
-description: 2014 restaurant inspections in Portland, OR.
-format: "png8:m=h"
-interactivity_layer: ''
-layers:
+center: 
+  - -122.6756
+  - 45.5243
+  - 15
+description: 2014 Restaurant inspection data for Portland, OR.
+format: "png8:m=h:c=64"
+interactivity_layer: inspections
+layers: 
   - landcover
   - hillshade
   - contour
@@ -46,14 +47,14 @@ layers:
   - road_label
   - waterway_label
   - housenum_label
-maxzoom: 22
+maxzoom: 20
 minzoom: 14
-name: Portland Restaurant Inspections
+name: Restaurant Inspections
 source: "mapbox:///mapbox.mapbox-terrain-v1,mapbox.mapbox-streets-v5,caged.845d6d73"
-styles:
+styles: 
   - style.mss
   - labels.mss
   - roads.mss
   - buildings.mss
   - inspections.mss
-template: ''
+template: "<div class='grade {{grade}}'><h3>{{name}}</h3> scored <span class='score'>{{score}}</span> on <span class='date'>{{date}}</span></div>"
